@@ -4,15 +4,6 @@ class BookFormat < ActiveRecord::Base
   belongs_to :book
   belongs_to :format
 
-  attr_accessor :include
-  after_find :set_include
-
-  private
-
-    def set_included
-        self.included = "1"
-    end
-
 end
 
 # example:
