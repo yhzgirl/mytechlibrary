@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
-
+  before_filter :authenticate, :except => :index
+  
   #GET
   def index
     @books = Book.all
