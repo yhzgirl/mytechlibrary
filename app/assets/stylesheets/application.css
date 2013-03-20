@@ -18,15 +18,47 @@ p{
   color: #666666;
 }
 
+header ul{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+
+header li{
+float:right;
+}
+
+header a:link, header a:visited{
+display:block;
+width:120px;
+font-weight:bold;
+color:#FFFFFF;
+background-color:#754d65;
+font-family: arial, sans-serif;
+text-align:center;
+padding:4px;
+text-decoration:none;
+text-transform:uppercase;
+}
+
+header a{
+  display:block;
+  width:60px;
+  }
+
+header a:hover{
+  color: #bfcda1;
+}
+
 footer{
   text-align: right;
 }
 
 
-
 li.style{
   font-weight: bold;
-
+  background-color: 
 }
 
 h1{

@@ -1,4 +1,7 @@
 class Book < ActiveRecord::Base
+ # has_many :book_formats
+  # has_many :formats, :through => book_formats
+
   attr_accessible :author, :format, :read, :title, :ISBN
 
   validates :title, :ISBN, :presence => true

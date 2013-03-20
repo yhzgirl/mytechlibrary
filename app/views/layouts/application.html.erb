@@ -9,8 +9,16 @@
 <body>
   <header>
     <h1> My Tech Library </h1>
-     <p align="right"><%= link_to "Add a book", new_book_path %></p>
- <p align="right"><%= link_to "Home", books_path %></p>
+      <ul class="plain">
+        <% if current_user %>
+        <li><%= link_to "Log out", log_out_path %></li>
+          <% else %>
+             <li><%= link_to "Sign up", sign_up_path %></li>
+             <li><%= link_to "log in", log_in_path %></li>
+            <% end %>
+        <li><%= link_to "Add a book", new_book_path %></li>
+        <li><%= link_to "Home", books_path %></li>
+    </ul>
   </header>
 
     <% flash.each do | name, message | %>
@@ -18,17 +26,6 @@
     <% message %>
     </div>
 <% end %>
-
-<div id="user_nav">
-  <% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", log_out_path %>
-  <% else %>
-    <%= link_to "Sign up", sign_up_path %> or
-    <%= link_to "log in", log_in_path %>
-  <% end %>
-</div>
-
 
   <%= yield %>
 
