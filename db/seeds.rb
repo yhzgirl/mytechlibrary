@@ -4,4 +4,7 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+   Format.create(type: 'PDF')
+   Format.create(type: 'eBook')
+   Format.create(type: 'softcover')
+   Format.create(type: 'hardcover')

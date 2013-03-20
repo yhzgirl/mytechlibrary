@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     if @current_user == nil
-      flash[:notice] = "Please logged in to access this."
+      flash[:notice] = "Please login to access this area."
       redirect_to root_path 
     end
   end

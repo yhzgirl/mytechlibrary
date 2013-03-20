@@ -51,11 +51,6 @@ header a:hover{
   color: #bfcda1;
 }
 
-footer{
-  text-align: right;
-}
-
-
 li.style{
   font-weight: bold;
   background-color: 
@@ -93,4 +88,16 @@ a:hover{
 
 a:active{
   color: #754d65;
+}
+
+footer .copy-left {
+     display: inline-block;
+     text-align: right;
+     margin: 0px;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
 }
