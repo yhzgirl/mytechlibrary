@@ -1,0 +1,10 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></P>
+<% end %>
+
+<h3> Title: <%= @book.title %> </h3>
+<p> Author: <%= @book.author %> </p>
+<p> <%= @book.read ? "I've read this book." : "Not read it yet." %> </p>
+<br>
+ <p><%= link_to "Edit this book", edit_book_path %></p>
+  <p><%= link_to "Delete this book", book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></p>

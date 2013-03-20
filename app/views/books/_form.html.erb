@@ -1,0 +1,15 @@
+
+<%= form_for [@book] do |b| %>
+  
+  <%= errors_for(@book, "Opps, unable to add/update book").html_safe %>
+  <%= b.label :ISBN, 'ISBN' %>:
+  <%= b.text_field :ISBN %> <br/>
+  <%= b.label :title, 'Title of book' %>:
+  <%= b.text_field :title %> <br/>
+  <%= b.label :author, 'Author' %>:
+  <%= b.text_field :author %><br/>
+  <%= b.label :read, 'Read' %>?
+  <%= b.radio_button :read, true %> <%= b.label :read, "Yes" %>
+  <%= b.radio_button :read, false %> <%= b.label :read, "No" %>
+  <%= b.submit %>
+<% end %>

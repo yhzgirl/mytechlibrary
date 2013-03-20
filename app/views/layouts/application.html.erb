@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Tech Library</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <h1> My Tech Library </h1>
+     <p><%= link_to "Add a book", new_book_path %></p>
+ <p><%= link_to "Home", books_path %></p>
+  </header>
+
+    <% flash.each do | name, message | %>
+    <div id="flash_<%= name %>" >
+    <% message %>
+    </div>
+<% end %>
+
+  <%= yield %>
+
+<footer>
+  <p>&copy; Michelle Brideau 2013</p>
+  </footer>
+</body>
+</html>

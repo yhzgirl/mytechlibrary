@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+p{
+  font-family: arial, sans-serif;
+  font-size: 1em;
+  color: #666666;
+}
+
+footer{
+  text-align: right;
+}
+
+
+
+li.style{
+  font-weight: bold;
+
+}
+
+h1{
+  font-family: arial, sans-serif;
+  color: #6f8540;
+}
+
+h3{
+  font-family: arial, sans-serif;
+  color: #754d65;
+  background-color: #bfcda1;
+  padding: 10px;
+  margin: 5px;
+}
+
+ul.plain{
+  list-style: none;
+}
+
+a:link{
+ color: #703559;
+ text-decoration: none; 
+}
+
+a:visited{
+  color: #000000;
+}
+
+a:hover{
+  color: #bfcda1;
+}
+
+a:active{
+  color: #754d65;
+}
