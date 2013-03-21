@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  # before_filter :authenticate, :except => :index
+  before_filter :authenticate, :except => :index
   
   #GET
   def index

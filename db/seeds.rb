@@ -4,7 +4,7 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-   Format.create(type: 'PDF')
-   Format.create(type: 'eBook')
-   Format.create(type: 'softcover')
-   Format.create(type: 'hardcover')
+   Format.create(category: 'PDF')
+   Format.create(category: 'eBook')
+   Format.create(category: 'softcover')
+   Format.create(category: 'hardcover')
