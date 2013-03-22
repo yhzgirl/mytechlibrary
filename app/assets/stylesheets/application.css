@@ -90,14 +90,36 @@ a:active{
   color: #754d65;
 }
 
-footer .copy-left {
-     display: inline-block;
-     text-align: right;
-     margin: 0px;
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
+.show ul{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  overflow:hidden;
 }
+
+.show li{
+float:right;
+}
+
+.show a:link, .show a:visited{
+display:block;
+width:120px;
+font-weight:bold;
+color:#FFFFFF;
+background-color:#754d65;
+font-family: arial, sans-serif;
+text-align:center;
+padding:4px;
+text-decoration:none;
+text-transform:uppercase;
+}
+
+.show a{
+  display:block;
+  width:60px;
+  }
+
+.show a:hover{
+  color: #bfcda1;
+}
+

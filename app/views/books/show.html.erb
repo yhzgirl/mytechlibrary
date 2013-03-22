@@ -10,5 +10,9 @@
       <p><%= format.category %></p>
 <% end %>
 <br>
- <p><%= link_to "Edit this book", edit_book_path %></p>
-  <p><%= link_to "Delete this book", book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <div class="show">
+    <ul>
+      <li><%= link_to "Edit this book", edit_book_path %></li>
+      <li><%= link_to "Delete this book", book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    </ul>
+  </div>
