@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to books_path, :notice => "Your are now signed up!"
+      user = User.find_by_email(@user.email)
+      session[:user_id] = user.id
+      redirect_to root_path, :notice => "Your are now signed up!"
     else
       render "new"
     end
