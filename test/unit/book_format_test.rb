@@ -1,9 +1,10 @@
 require 'test_helper'
+require 'factories/book_factory'
 
 class BookFormatTest < ActiveSupport::TestCase
   test "the book and format can be saved to the joiner table" do
-    book = Book.create
-    book2 = Book.create
+    book = BookFactory.random_book
+    book2 = BookFactory.random_book
     pdf = Format.create
     ebook = Format.create
     assert_equal 0, book.formats.count

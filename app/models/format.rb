@@ -1,6 +1,6 @@
 class Format < ActiveRecord::Base
-  has_many :book_formats
-  has_many :books, :through => :book_formats
+  attr_accessible :category, :book_ids
 
-  attr_accessible :category, :format_id
+  has_many :book_formats
+  has_many :books, :through => :book_formats  
 end

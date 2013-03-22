@@ -2,9 +2,9 @@ class Book < ActiveRecord::Base
   has_many :book_formats
   has_many :formats, :through => :book_formats
 
-  attr_accessible :author, :read, :title, :ISBN, :book_id
+  attr_accessible :author, :read, :title, :ISBN, :format_ids
 
   validates :title, :ISBN, :presence => true
-  validates_uniqueness_of :ISBN
-  validates_length_of :ISBN, :within => 10..13
+  # validates_uniqueness_of :ISBN
+  # validates_length_of :ISBN, :within => 10..13
 end
