@@ -28,6 +28,20 @@ class BookTest < ActiveSupport::TestCase
     assert book.valid?
   end
 
+  test "title can be looked up on amazon using isbn" do    
+    book = BookFactory.book(:ISBN => '0596515774')
+    assert_equal "Book 0596515774", book.title
+    book.lookup! # fetches the data from amazon and saves it to the db
+    # book.reload # reloads the information from the db
+    assert_equal "Head First Rails: A Learner's Companion to Ruby on Rails", book.title
+  end
+
+  test "asin can be looked up by title" do
+    book = Book.new(:title => "Head First Rails: A Learner's Companion to Ruby on Rails")
+    book.lookup!
+    assert_equal '0596515774', book.ISBN
+  end
+
   # test "cannot save a book that has an ISBN of an existing book ISBN" do
   #   book = BookFactory.book_with_same_isbn
     # books<<book
@@ -35,5 +49,5 @@ class BookTest < ActiveSupport::TestCase
     # book2 = BookFactory.book_with_same_isbn
     # books<<book2
     # assert_equal 1, books.length
-  end
+  # end
 end

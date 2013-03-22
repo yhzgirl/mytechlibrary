@@ -1,5 +1,11 @@
 class BookFactory
 
+  def self.book(params = {})
+    params[:ISBN] ||= "1234567890"
+    params[:title] ||= "Book #{params[:ISBN]}"
+    Book.create!(params)
+  end
+
   def self.random_book
     isbn = Array.new(10) { rand(10) }.join
     title = "Book #{isbn}"

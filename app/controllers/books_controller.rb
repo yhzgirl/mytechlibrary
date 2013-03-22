@@ -34,11 +34,12 @@ class BooksController < ApplicationController
   #POST
   def create
     @book = Book.new(params[:book])
-      respond_to do |format|
-      if @book.save #why does this not work with a !
-      flash[:notice] = "The book has been saved"
-        format.html { redirect_to @book, notice: "The book has been saved" }
-        format.json { render json: @book, status: :created, location: @book }
+    @book.lookup!
+    respond_to do |format|
+    if @book.save #why does this not work with a !
+      flash[:notice] = "The book has been saved"        
+      format.html { redirect_to @book, notice: "The book has been saved" }
+      format.json { render json: @book, status: :created, location: @book }
     else
       #redirect_to(@book)
       format.html { render action: "new" }

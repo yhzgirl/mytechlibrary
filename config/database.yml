@@ -45,6 +45,7 @@ test:
   database: mytechlibrary_test
   pool: 5
   host: localhost
+  min_messages: WARNING 
   # username: mytechlibrary
   # password:
 
