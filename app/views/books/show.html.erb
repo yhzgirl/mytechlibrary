@@ -5,6 +5,10 @@
 <h3> Title: <%= @book.title %> </h3>
 <p> Author: <%= @book.author %> </p>
 <p> <%= @book.read ? "I've read this book." : "Not read it yet." %> </p>
+<p> I have this book in the following formats:</p>
+  <% @book.formats.each do |format| %>
+      <p><%= format.category %></p>
+<% end %>
 <br>
  <p><%= link_to "Edit this book", edit_book_path %></p>
   <p><%= link_to "Delete this book", book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></p>
