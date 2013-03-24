@@ -42,6 +42,7 @@ class BookTest < ActiveSupport::TestCase
     assert_equal '0596515774', book.ISBN
   end
 
+
   # test "cannot save a book that has an ISBN of an existing book ISBN" do
   #   book = BookFactory.book_with_same_isbn
     # books<<book

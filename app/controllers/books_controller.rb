@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   
   #GET
   def index
-    @books = Book.all
+    @books = Book.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb

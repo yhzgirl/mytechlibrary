@@ -10,6 +10,8 @@ Mytechlibrary::Application.routes.draw do
   root :to => 'books#index'
   resources :books
 
+  # match '/search' => 'books#index', :as => :search
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

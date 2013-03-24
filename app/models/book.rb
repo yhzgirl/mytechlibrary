@@ -15,6 +15,14 @@ class Book < ActiveRecord::Base
     self.ISBN = amazon_book_using_title.asin if self.title && !self.ISBN     
   end
 
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title ILIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
 private
 
   def client
