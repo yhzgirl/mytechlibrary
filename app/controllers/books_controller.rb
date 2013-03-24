@@ -83,8 +83,4 @@ class BooksController < ApplicationController
     #redirect_to books_path
   end
 
-  def auto_complete_title
-    
-  end
-
 end
