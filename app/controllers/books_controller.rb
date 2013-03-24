@@ -42,6 +42,7 @@ class BooksController < ApplicationController
       format.json { render json: @book, status: :created, location: @book }
     else
       #redirect_to(@book)
+      # flash[:notice] = "The book could not be saved"
       format.html { render action: "new" }
       format.json { render json: @book.errors, status: :unprocessable_entity }
       end
@@ -80,6 +81,10 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
     #redirect_to books_path
+  end
+
+  def auto_complete_title
+    
   end
 
 end

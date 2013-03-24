@@ -11,8 +11,8 @@ class Book < ActiveRecord::Base
   validates_length_of :ISBN, :within => 10..13
 
   def lookup!              
-    self.title = amazon_book_using_isbn.title if self.ISBN  
-    self.ISBN = amazon_book_using_title.asin if self.title && !self.ISBN     
+    self.title = amazon_book_using_isbn if self.ISBN  
+    self.ISBN = amazon_book_using_title if self.title && !self.ISBN     
   end
 
   def self.search(search)
@@ -30,11 +30,11 @@ private
   end
   
   def amazon_book_using_isbn
-    client.lookup(self.ISBN).first
+    client.lookup(self.ISBN).first.title
   end
 
   def amazon_book_using_title
-    client.search_keywords(self.title).first
+    client.search_keywords(self.title).first.asin
   end
 
 end
