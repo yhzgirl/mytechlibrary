@@ -1,6 +1,5 @@
-
-<%= form_tag books_path, :method => "get" do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search by Title", :name => nil %>
-<% end %>
+  <%= form_tag '', :method => :get do %>
+    <%= search_field_tag :term, params[:term], :class=> "input-large" %>
+    <%= submit_tag "Search Books", :name => nil, :class => 'button btn', :id => "search_bn" %>
+  <% end %>
 

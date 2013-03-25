@@ -1,9 +1,12 @@
+require 'search_controller'
+
 class BooksController < ApplicationController
+
   before_filter :authenticate, :except => :index
   
   #GET
   def index
-    @books = Book.search(params[:search])
+    @books = Book.search(params[:term])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -82,5 +85,4 @@ class BooksController < ApplicationController
     end
     #redirect_to books_path
   end
-
 end
