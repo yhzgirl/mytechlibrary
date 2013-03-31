@@ -393,7 +393,7 @@ body .ui-tooltip {
 /* Component containers
 ----------------------------------*/
 .ui-widget {
-	font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+	font-family: Arial,Trebuchet MS,Tahoma,Verdana, sans-serif;
 	font-size: 1.1em;
 }
 .ui-widget .ui-widget {
@@ -403,7 +403,7 @@ body .ui-tooltip {
 .ui-widget select,
 .ui-widget textarea,
 .ui-widget button {
-	font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+	font-family: Arial,Trebuchet MS,Tahoma,Verdana,sans-serif;
 	font-size: 1em;
 }
 .ui-widget-content {
@@ -449,13 +449,13 @@ body .ui-tooltip {
 	border: 1px solid #fbcb09;
 	background: #fdf5ce url(images/ui-bg_glass_100_fdf5ce_1x400.png) 50% 50% repeat-x;
 	font-weight: bold;
-	color: #c77405;
+	color: #754d65;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
 .ui-state-hover a:link,
 .ui-state-hover a:visited {
-	color: #c77405;
+	color: #754d65;
 	text-decoration: none;
 }
 .ui-state-active,

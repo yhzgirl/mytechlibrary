@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: books
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  author     :string(255)
+#  read       :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  ISBN       :string(255)
+#
+
 require "rexml/document" # addresses https://bugs.ruby-lang.org/issues/7961#change-37017
 
 class Book < ActiveRecord::Base
@@ -15,9 +28,9 @@ class Book < ActiveRecord::Base
     self.ISBN = amazon_book_using_title if self.title && !self.ISBN     
   end
 
-  def self.search(search)
-    if search
-      find(:all, :conditions => ['title ILIKE ?', "%#{search}%"])
+  def self.search(title)
+    if title
+      find(:all, :conditions => ['title ILIKE ?', "%#{title}%"])
     else
       find(:all)
     end

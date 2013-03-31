@@ -41,3 +41,7 @@ gem 'debugger', group: [:development, :test]
 
 gem 'asin'
 
+group :development do
+  gem 'annotate', '2.5.0'
+  gem 'taps'
+end

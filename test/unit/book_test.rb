@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: books
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  author     :string(255)
+#  read       :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  ISBN       :string(255)
+#
+
 require 'test_helper'
 require 'factories/book_factory'
 

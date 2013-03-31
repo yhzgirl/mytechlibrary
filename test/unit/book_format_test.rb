@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: book_formats
+#
+#  id         :integer          not null, primary key
+#  book_id    :integer
+#  format_id  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'test_helper'
 require 'factories/book_factory'
 

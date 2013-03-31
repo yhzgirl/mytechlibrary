@@ -8,9 +8,8 @@ Mytechlibrary::Application.routes.draw do
   resources :sessions
 
   root :to => 'books#index'
-  resources :books do
-    get 'search_on_title', :on => :collection
-  end
+  resources :books
+  match 'search_on_title' => "search#search_on_title"
 
   # match '/search' => 'books#index', :as => :search
 
