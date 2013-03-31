@@ -1,4 +1,5 @@
 require 'search_controller'
+require 'asin'
 
 class BooksController < ApplicationController
 

@@ -13,6 +13,7 @@
 
 require "rexml/document" # addresses https://bugs.ruby-lang.org/issues/7961#change-37017
 
+
 class Book < ActiveRecord::Base
   has_many :book_formats
   has_many :formats, :through => :book_formats
@@ -23,9 +24,9 @@ class Book < ActiveRecord::Base
   validates_uniqueness_of :ISBN
   validates_length_of :ISBN, :within => 10..13
 
-  def lookup!              
-    self.title = amazon_book_using_isbn if self.ISBN  
-    self.ISBN = amazon_book_using_title if self.title && !self.ISBN     
+  def lookup!
+    self.title = amazon_book_using_isbn.first.title if self.ISBN?
+    self.ISBN = amazon_book_using_title.first.asin if self.title? && !self.ISBN?   
   end
 
   def self.search(title)
@@ -43,11 +44,11 @@ private
   end
   
   def amazon_book_using_isbn
-    client.lookup(self.ISBN).first.title
+    book = client.lookup(self.ISBN)
   end
 
   def amazon_book_using_title
-    client.search_keywords(self.title).first.asin
+    client.search_keywords(self.title)
   end
 
 end
