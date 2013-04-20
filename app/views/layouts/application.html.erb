@@ -13,10 +13,10 @@
     <h1> My Tech Library </h1>
       <ul class="plain">
         <% if current_user %>
-        <li><%= link_to "Log out", log_out_path %></li>
+        <li><%= link_to "Log out", logout_path %></li>
           <% else %>
              <li><%= link_to "Sign up", sign_up_path %></li>
-             <li><%= link_to "log in", log_in_path %></li>
+             <li><%= link_to "log in", login_path %></li>
             <% end %>
         <li><%= link_to "Add a book", new_book_path %></li>
         <li><%= link_to "Home", books_path %></li>
@@ -29,9 +29,9 @@
     </div>
   <% end %>
 
-  <div>
+  <span style="align: right">
     <%= render 'books/search' %>
-</div>
+</span>
 
   <%= yield %>
 
